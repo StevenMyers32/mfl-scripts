@@ -9,19 +9,19 @@ const getFranchiseAuctionInitialState = async () => {
    *
    * Save to file to avoid code update if used more than me :)
    */
-  // console.log('--- START INITIAL STATE ---')
-  // const franchise = await franchiseRequest.getIdFranchiseMap();
-  // const franchiseAuctions = Object.values(franchise).reduce((acc, current) => {
-  //   acc[current.id] = {
-  //     name: current.name,
-  //     wonTotal: 0,
-  //     initTotal: 0,
-  //     bidsGranted: 2,
-  //   };
-  //   return acc;
-  // }, {});
-  // console.log(franchiseAuctions);
-  // console.log('--- END INITIAL STATE ---')
+  console.log('--- START INITIAL STATE ---')
+  const franchise = await franchiseRequest.getIdFranchiseMap();
+  const franchiseAuctions = Object.values(franchise).reduce((acc, current) => {
+    acc[current.id] = {
+      name: current.name,
+      wonTotal: 0,
+      initTotal: 0,
+      bidsGranted: 2,
+    };
+    return acc;
+  }, {});
+  console.log(franchiseAuctions);
+  console.log('--- END INITIAL STATE ---')
 
   /**
    * After initialized, below is the saved response from the above command
